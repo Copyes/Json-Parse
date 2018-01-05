@@ -10,14 +10,15 @@
   "scripts": {
     "dev": "webpack --progress --colors --watch --env dev",
     "build": "webpack --env dev && webpack --env build && npm run test",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
+    "test:watch": "mocha --require babel-core/register -w --colors ./test/*.spec.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Copyes/Json-Parse.git"
   },
   "keywords": ["webpack", "library", "ES6"],
-  "author": "",
+  "author": "Lip Fan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Copyes/Json-Parse/issues"
