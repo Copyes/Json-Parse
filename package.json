@@ -8,10 +8,12 @@
     "test": "test"
   },
   "scripts": {
+    "precommit": "npm run lint",
     "dev": "webpack --progress --colors --watch --env dev",
     "build": "webpack --env dev && webpack --env build && npm run test",
     "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
-    "test:watch": "mocha --require babel-core/register -w --colors ./test/*.spec.js"
+    "test:watch": "mocha --require babel-core/register -w --colors ./test/*.spec.js",
+    "lint": "eslint --ext .js src"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
     "chai": "^4.1.2",
     "eslint": "^4.14.0",
     "eslint-loader": "^1.9.0",
+    "husky": "^0.14.3",
     "mocha": "^4.1.0",
     "webpack": "^3.10.0",
     "yargs": "^10.0.3"
